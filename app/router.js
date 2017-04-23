@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('home');
+  this.route('contact');
+  this.route('video', function() {
+    this.route('show', {path: '/:videoName'})
+  });
 });
 
 export default Router;
