@@ -12,8 +12,11 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active">{{#link-to 'home'}}{{t 'nav.home'}}{{/link-to}}</li>
-                <li>{{#link-to 'contact'}}{{t 'nav.contact'}}{{/link-to}}</li>
+                <li>{{#link-to 'home' model.lang}}{{t 'nav.home'}}{{/link-to}}</li>
+                <li>{{#link-to 'contact' model.lang}}{{t 'nav.contact'}}{{/link-to}}</li>
+                {{#each model.availableLanguages as |lang|}}
+                    <li>{{#link-to 'home' lang}}{{lang}}{{/link-to}}</li>
+                {{/each}}
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

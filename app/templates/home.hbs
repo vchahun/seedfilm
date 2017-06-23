@@ -8,7 +8,7 @@
 <h3>{{family}}</h3>
 <div class="row">
     {{#each (get model.videos family) as |video|}}
-    {{#link-to "video.show" video.name}}
+    {{#link-to 'video.show' model.lang video.name}}
     <div class="col-md-3">
         <div class="thumbnail">
             <img src="/img/{{video.name}}.jpg" alt="..."/>

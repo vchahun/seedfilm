@@ -6,6 +6,6 @@ export default Ember.Route.extend({
             filter: {
                 name: params.videoName
             }
-        }).then((videos) => videos.get("firstObject"));
+        }).then((videos) => videos.get('firstObject'));
     }
 });
