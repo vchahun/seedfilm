@@ -14,7 +14,7 @@ export default Ember.Route.extend({
             }
         };
         this.get('store').query('video', q)
-            .then(function(videoList) {
+        .then(function(videoList) {
             videoList.forEach(function(video) {
                 let family = video.get('family');
                 if(families.indexOf(family) == -1) {
@@ -23,8 +23,9 @@ export default Ember.Route.extend({
                 }
                 videos[family].push(video);
             });
-        self.set('families', families);
-        self.set('videos', videos);
+            families.sort();
+            self.set('families', families);
+            self.set('videos', videos);
         });
         this.set('lang', this.get('i18n.locale'));
     },

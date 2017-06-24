@@ -1,0 +1,7 @@
+.jumbotron {
+    background-image: url("/img/banner.png");
+}
+.jumbotron h1, .jumbotron p.intro {
+    color: white; 
+    text-shadow: 0px 0px 10px black;
+}

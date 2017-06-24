@@ -1,11 +1,20 @@
-<h1>{{t 'home.title'}}</h1>
-
-<p>{{t 'home.intro'}}</p>
+<div class="jumbotron">
+    <h1>{{t 'home.title'}}</h1>
+    <p class="intro">{{t 'home.intro'}}</p>
+    <p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Order the DVD »</a>
+        <a class="btn btn-default btn-lg" href="#" role="button">Watch videos »</a>
+    </p>
+</div>
 
 <h2>Videos</h2>
 
 {{#each model.families as |family|}}
-<h3>{{family}}</h3>
+{{#if (eq family 'ABC')}}
+    <h3>ABC of seed production</h3>
+{{else}}
+    <h3>{{family}} family</h3>
+{{/if}}
 <div class="row">
     {{#each (get model.videos family) as |video|}}
     {{#link-to 'video.show' model.lang video.name}}
